@@ -1,42 +1,22 @@
-// function showList () {
-//     console.log('Works!');
-// }
+function toggleDropdown(id) {
+    document.getElementById(id).classList.toggle("show");
+};
 
-
-function DropDown(el) {
-    console.log('dd')
-    this.dd = el;
-    this.placeholder = this.dd.children('span');
-    this.opts = this.dd.find('ul.dropdown > li');
-    this.val = '';
-    this.index = -1;
-    this.initEvents();
-}
-DropDown.prototype = {
-    initEvents : function() {
-        console.log('initEvents')
-        var obj = this;
-
-        obj.dd.on('click', function(event){
-            console.log('dd on click')
-            $(this).toggleClass('active');
-            return false;
-        });
-
-        obj.opts.on('click',function(){
-            console.log('opts onclick')
-            var opt = $(this);
-            obj.val = opt.text();
-            obj.index = opt.index();
-            obj.placeholder.text(obj.val);
-        });
-    },
-    getValue : function() {
-        console.log('getValue')
-        return this.val;
-    },
-    getIndex : function() {
-        console.log('getIndex')
-        return this.index;
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        var active = document.getElementsByClassName('dropdown-content');
+        for(var i=0;i<active.length;i++){
+            if(active[i].classList.contains('show')) {
+                active[i].classList.remove('show');
+            }
+        }
     }
+};
+
+function selectOpt (val, event) {
+    var id = event.target.parentNode.id;
+    var el = document.getElementById(id +'-btn');
+    el.innerHTML = val;
+    el.value = val;
+    console.log(document.getElementById(id).parentNode);
 }

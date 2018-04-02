@@ -6,12 +6,21 @@
 	<title>Simple Dropdown</title>
 </head>
 <body>
-	<div id="dd" class="dd-container">Select an option
-		<!-- <button onclick="showList()">Show List</button> -->
-		<ul class="dropdown">
-			<li><a href="#">Item 1</a></li>
-			<li><a href="#">Item 2</a></li>
-			<li><a href="#">Item 3</a></li>
-		</ul>
+	<div class="dropdown">
+		<button id="cars-btn" onclick="toggleDropdown('cars')" class="dropbtn" value="">Cars</button>
+		<div id="cars" class="dropdown-content">
+			<a href="#" onclick="selectOpt('Lexus', event)">Lexus</a>
+			<a href="#" onclick="selectOpt('Honda', event)">Honda</a>
+			<a href="#" onclick="selectOpt('BMW', event)">BMW</a>
+		</div>
+	</div>
+	<div class="dropdown">
+		<button id="foods-btn" onclick="toggleDropdown('foods')" class="dropbtn" value="">Foods</button>
+		<div id="foods" class="dropdown-content">
+			<a href="#" onclick="selectOpt('Cheese', event)">Cheese</a>
+			<a href="#" onclick="selectOpt('Breads', event)">Bread</a>
+			<a href="#" onclick="selectOpt('Meat', event)">Meat</a>
+		</div>
 	</div>
 </body>
+</html>
